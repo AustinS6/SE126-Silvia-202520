@@ -10,18 +10,16 @@ def difference(people, max_cap):
     return diff
 
 def decision(response):
-    while response != "y" and !="n":
+    while response != "y" and response != "n":
         print("***INVALID ENTRY!***")
         response = input(" Would you like to enter another meeting [y or n]")
 
-        return decision
+        return response
 
 
 #--------MAIN EXECUTING CODE----------------------------------
 test = difference(100, 50)
 print(test)
 
-
-response = "y"
-test2 = decision(y)
-print(test2)
+response = input(print("Would you like to enter another meeting [y or n]"))
+test2 = decision(response)
