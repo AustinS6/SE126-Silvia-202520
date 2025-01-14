@@ -19,7 +19,7 @@ import csv
 
 #----connected to file--------
 
-print(f"{'TYPE':8}     {'BRAND':10}   {'CPU':5}   {'RAM':7}   {'1st Disk':7}   {'No HDD':10}   {'2nd Disk':7}   {'OS':5}   {'YR':5}")
+print(f"{'TYPE':8}     {'BRAND':10}   {'CPU':5}   {'RAM':7}   {'1st Disk':7}       {'No HDD':8}   {'2nd Disk':7}            {'OS':5}   {'YR':5}")
 print("----------------------------------------------------------------------------------------------------------------------------------")
 
 with open("Text_Files/filehandling.csv") as csvfile:
@@ -56,9 +56,9 @@ with open("Text_Files/filehandling.csv") as csvfile:
             os = rec[7]
             year = rec[8]
 
-            print(f"{device:8}     {pcbrand:10}   {cpu:5}   {ram:7}   {firstDisk:7}   {noHDD:10}                      {secondDisk:7}   {os:5}   {year:5}")
+            print(f"{device:8}     {pcbrand:10}   {cpu:5}   {ram:7}   {firstDisk:7}   {noHDD:8}          {secondDisk:7}           {os:5}   {year:5}")
         else:
             os = rec[6]
             year = rec[7]
 
-            print(f"{device:8}     {pcbrand:10}   {cpu:5}   {ram:7}   {firstDisk:7}   {noHDD:10}                                {os:5}   {year:5}")
+            print(f"{device:8}     {pcbrand:10}   {cpu:5}   {ram:7}   {firstDisk:7}   {noHDD:8}                            {os:5}   {year:5}")
