@@ -18,7 +18,7 @@ name = []       #rec[1] in file; unique  --> BINARY
 meaning = []    #rec[2] in file; unique  --> BINARY
 culture = []    #rec[3] in file; repeats --> SEQUENTIAL
 
-with open("week6/party.csv", encoding="utf-8") as csvfile:
+with open("Text_Files\party.csv", encoding="utf-8") as csvfile:
     file = csv.reader(csvfile)
 
     for rec in file: 

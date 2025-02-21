@@ -145,7 +145,7 @@ while ans == "y":
             else:
                 #search > name[mid]
                 min = mid + 1
-                mid = int((min + max) / 2)
+            mid = int((min + max) / 2)
 
             if search == name[mid]:
                 display(mid, 0, len(name))

@@ -118,7 +118,7 @@ while ans == "y":
         for i in range(0, len(title) - 1):
             
             for index in range(0, len(title) - 1):
-                if title[index] > title[index + 1]:
+                if (title[index] > title[index + 1]):
                     swap(index, title)
                     swap(index, library_num)
                     swap(index, author)
@@ -137,18 +137,18 @@ while ans == "y":
                 max = mid - 1
             
             else:
-                max = mid + 1
-                mid = int((min + max) / 2)
+                min = mid + 1
+            mid = int((min + max) / 2)
 
-            if search.lower() in title[mid].lower():
-                print(f"Your search for {search} is complete, see below details: ")
-                print(f"{'LIB NUM':8} {'TITLE':35} {'AUTHOR':25} {'GENRE':16} {'PAGES':4} {'status'}")
-                print("----------------------------------------------------------------------------------------------------------------")
-                print(f"{library_num[mid]:8} {title[mid]:35} {author[mid]:25} {genre[mid]:16} {pages[mid]:4} {status[mid]}")
-                print("----------------------------------------------------------------------------------------------------------------")
+        if search.lower() in title[mid].lower():
+            print(f"Your search for {search} is complete, see below details: ")
+            print(f"{'LIB NUM':8} {'TITLE':35} {'AUTHOR':25} {'GENRE':16} {'PAGES':4} {'status'}")
+            print("----------------------------------------------------------------------------------------------------------------")
+            print(f"{library_num[mid]:8} {title[mid]:35} {author[mid]:25} {genre[mid]:16} {pages[mid]:4} {status[mid]}")
+            print("----------------------------------------------------------------------------------------------------------------")
 
-            else:
-                print(f"Your search for {search} is complete, and no information was found. ")
+        else:
+            print(f"Your search for {search} is complete, and no information was found. ")
 
     elif search_type == "3":
         print(f"You have chosen Search by Author")
@@ -222,29 +222,29 @@ while ans == "y":
                     swap(index, pages)
                     swap(index, status)
 
-        min = 0
-        max = len(library_num)
-        mid = int((min + max) / 2)
-
         search = input("Enter the LIBRARY NUM you wish to search for: ")
 
-        while min < max and search.lower() not in library_num[mid]:
-            if search.lower() < library_num[mid]:
-                max = min - 1
+        min = 0
+        max = len(library_num) - 1
+        mid = int((min + max) / 2)
+
+        while min < max and search != library_num[mid]:
+            if search < library_num[mid]:
+                max = mid - 1
             
             else:
-                max = min + 1
+                min = mid + 1
             mid = int((min + max) / 2)
 
-            if search.lower() == library_num[mid]:
-                print(f"Your search for {search} is complete, see below details: ")
-                print(f"{'LIB NUM':8} {'TITLE':35} {'AUTHOR':25} {'GENRE':16} {'PAGES':4} {'status'}")
-                print("----------------------------------------------------------------------------------------------------------------")
-                print(f"{library_num[mid]:8} {title[mid]:35} {author[mid]:25} {genre[mid]:16} {pages[mid]:4} {status[mid]}")
-                print("----------------------------------------------------------------------------------------------------------------")
+        if search == library_num[mid]:
+            print(f"Your search for {search} is complete, see below details: ")
+            print(f"{'LIB NUM':8} {'TITLE':35} {'AUTHOR':25} {'GENRE':16} {'PAGES':4} {'status'}")
+            print("----------------------------------------------------------------------------------------------------------------")
+            print(f"{library_num[mid]:8} {title[mid]:35} {author[mid]:25} {genre[mid]:16} {pages[mid]:4} {status[mid]}")
+            print("----------------------------------------------------------------------------------------------------------------")
 
-            else:
-                print(f"Your search for {search} is complete, and no information was found. ")
+        else:
+            print(f"Your search for {search} is complete, and no information was found. ")
 
     elif search_type == "6":
         print(f"You have chosen to Show all AVAILABLE")
