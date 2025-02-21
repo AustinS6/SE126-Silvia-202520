@@ -68,6 +68,8 @@ with open("Text_Files/book_list.csv") as csvfile:
         pages.append(rec[4])
         status.append(rec[5])
 
+display("x", 0, len(title))
+
 ans = input("Would you like to enter your Personal Library Menu? [y/n]: ").lower()
 
 while ans != "y" and ans != "n":
@@ -125,18 +127,18 @@ while ans == "y":
                     swap(index, status)
 
         min = 0
-        max = len(title)
+        max = len(title) - 1
         mid = int((min + max) / 2)
 
         search = input("Enter the TITLE you wish to search for: ")
 
         while min < max and search.lower() not in title[mid].lower():
             if search.lower() < title[mid].lower():
-                max = min - 1
+                max = mid - 1
             
             else:
-                max = min + 1
-            mid = int((min + max) / 2)
+                max = mid + 1
+                mid = int((min + max) / 2)
 
             if search.lower() in title[mid].lower():
                 print(f"Your search for {search} is complete, see below details: ")
@@ -149,7 +151,7 @@ while ans == "y":
                 print(f"Your search for {search} is complete, and no information was found. ")
 
     elif search_type == "3":
-        print(f"You have chosen to Show all Authors")
+        print(f"You have chosen Search by Author")
 
         for i in range(0, len(title) - 1):
             
@@ -162,33 +164,142 @@ while ans == "y":
                     swap(index, pages)
                     swap(index, status)
 
-        found = -1
+        found = []
         
         search_author = input("Enter the name of the Author you wish to search for: ")
 
         for i in range(0, len(author)):
             if search_author.lower() in author[i].lower():
-                found = i
+                found.append(i)
             
-        if found != - 1:    
-            print(f"Your search for {search_author} was found!")
-            print(f"{library_num[found]:8} {title[found]:35} {author[found]:25} {genre[found]:16} {pages[found]:4} {status[found]}")
+        if not found:    
+            print(f"your search for {search_author} was NOT found! :(")
         
         else:
-            print(f"your search for {search_author} was NOT found! :(")
-
+            print(f"Your search for {search_author} was found!")
+            display("x", found, len(found))
 
     elif search_type == "4":
-        print(f"You have chosen to Show all Titles")
+        print(f"You have chosen to Search by genre")
+
+        for i in range(0, len(title) - 1):
+            
+            for index in range(0, len(title) - 1):
+                if title[index] > title[index + 1]:
+                    swap(index, title)
+                    swap(index, library_num)
+                    swap(index, author)
+                    swap(index, genre)
+                    swap(index, pages)
+                    swap(index, status)
+
+        found = []
+        
+        search_genre = input("Enter the name of the Author you wish to search for: ")
+
+        for i in range(0, len(genre)):
+            if search_genre.lower() in genre[i].lower():
+                found.append(i)
+            
+        if not found:    
+            print(f"your search for {search_genre} was NOT found! :(")
+        
+        else:
+            print(f"Your search for {search_genre} was found!")
+            display("x", found, len(found))
     
     elif search_type == "5":
-        print(f"You have chosen to Show all Titles")
+        print(f"You have chosen to Search by Library Number")
+
+        for i in range(0, len(library_num) - 1):
+            
+            for index in range(0, len(library_num) - 1):
+                if title[index] > title[index + 1]:
+                    swap(index, title)
+                    swap(index, library_num)
+                    swap(index, author)
+                    swap(index, genre)
+                    swap(index, pages)
+                    swap(index, status)
+
+        min = 0
+        max = len(library_num)
+        mid = int((min + max) / 2)
+
+        search = input("Enter the LIBRARY NUM you wish to search for: ")
+
+        while min < max and search.lower() not in library_num[mid]:
+            if search.lower() < library_num[mid]:
+                max = min - 1
+            
+            else:
+                max = min + 1
+            mid = int((min + max) / 2)
+
+            if search.lower() == library_num[mid]:
+                print(f"Your search for {search} is complete, see below details: ")
+                print(f"{'LIB NUM':8} {'TITLE':35} {'AUTHOR':25} {'GENRE':16} {'PAGES':4} {'status'}")
+                print("----------------------------------------------------------------------------------------------------------------")
+                print(f"{library_num[mid]:8} {title[mid]:35} {author[mid]:25} {genre[mid]:16} {pages[mid]:4} {status[mid]}")
+                print("----------------------------------------------------------------------------------------------------------------")
+
+            else:
+                print(f"Your search for {search} is complete, and no information was found. ")
 
     elif search_type == "6":
-        print(f"You have chosen to Show all Titles")
+        print(f"You have chosen to Show all AVAILABLE")
+
+        for i in range(0, len(title) - 1):
+            
+            for index in range(0, len(title) - 1):
+                if title[index] > title[index + 1]:
+                    swap(index, title)
+                    swap(index, library_num)
+                    swap(index, author)
+                    swap(index, genre)
+                    swap(index, pages)
+                    swap(index, status)
+
+        found = []
+
+        for i in range(0, len(status)):
+            if status[i] == "available":
+                found.append(i)
+            
+        if not found:    
+            print(f"your search for Available was NOT found! :(")
+        
+        else:
+            print(f"Your search for Available was found!")
+            display("x", found, len(found))
 
     elif search_type == "7":
         print(f"You have chosen to Show all Titles")
+
+        for i in range(0, len(title) - 1):
+            
+            for index in range(0, len(title) - 1):
+                if title[index] > title[index + 1]:
+                    swap(index, title)
+                    swap(index, library_num)
+                    swap(index, author)
+                    swap(index, genre)
+                    swap(index, pages)
+                    swap(index, status)
+
+
+        found = []
+
+        for i in range(0, len(status)):
+            if status[i] == "on loan":
+                found.append(i)
+            
+        if not found:    
+            print(f"your search for On Loan was NOT found! :(")
+        
+        else:
+            print(f"Your search for On Loan was found!")
+            display("x", found, len(found))
 
     elif search_type == "8":
         print("GOODBYE, Have a Great Day :)")
