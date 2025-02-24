@@ -28,7 +28,7 @@
 import csv
 
 #--FUNCTIONS---------------------------------------------------------------------------
-#display
+#display function
 def display(x, foundList, records):
     
     print(f"{'LIB NUM':8} {'TITLE':35} {'AUTHOR':25} {'GENRE':16} {'PAGES':4} {'status'}")
