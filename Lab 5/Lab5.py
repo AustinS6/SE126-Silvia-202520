@@ -214,7 +214,7 @@ while ans == "y":
         for i in range(0, len(library_num) - 1):
             
             for index in range(0, len(library_num) - 1):
-                if title[index] > title[index + 1]:
+                if library_num[index] > library_num[index + 1]:
                     swap(index, title)
                     swap(index, library_num)
                     swap(index, author)
