@@ -28,6 +28,7 @@
 import csv
 
 #--FUNCTIONS---------------------------------------------------------------------------
+#display
 def display(x, foundList, records):
     
     print(f"{'LIB NUM':8} {'TITLE':35} {'AUTHOR':25} {'GENRE':16} {'PAGES':4} {'status'}")
@@ -43,7 +44,7 @@ def display(x, foundList, records):
         for i in range(0, records):
             print(f"{library_num[i]:8} {title[i]:35} {author[i]:25} {genre[i]:16} {pages[i]:4} {status[i]}")
     print("------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n")
-
+#swap function:
 def swap(i, listName):
     temp = listName[i]
     listName[i] = listName[i + 1]
@@ -56,7 +57,7 @@ author = []
 genre = []
 pages = []
 status = []
-
+#open textfile
 with open("Text_Files/book_list.csv") as csvfile:
     file = csv.reader(csvfile)
 
@@ -75,7 +76,7 @@ ans = input("Would you like to enter your Personal Library Menu? [y/n]: ").lower
 while ans != "y" and ans != "n":
     print("***INVALID ENTRY!***")
     ans = input("Would you like to enter your Personal Library Menu? [y/n]").lower()
-
+#begin searching
 while ans == "y":
     print("\tSEARCHING MENU")
     print("1. Show all Titles - In Alphabetical order")
