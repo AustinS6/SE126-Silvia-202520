@@ -19,16 +19,23 @@
 import csv
 
 #--FUNCTIONS---------------------------------------------------------------------------
-
+def swap(i, listName):
+    temp = listName[i]
+    listName[i] = listName[i + 1]
+    listName[i + 1] = temp
 
 #--MAIN EXECUTION CODE-----------------------------------------------------------------
 word = {}
+
+words = []
 
 with open("Text_Files/words.csv") as csvfile:
     file = csv.reader(csvfile)
 
     for rec in file:
         word.update({rec[0] : rec[1]})
+
+        words.append(rec[0])
 
 ans = "y"
 
@@ -37,9 +44,10 @@ while ans == "y":
     print("1. Show all words")
     print("2. Search for a word")
     print("3. Add a word")
+    print("3.5. List words alphabetically")
     print("4. EXIT")
     
-    search = input("Which would you like to search for? [1, 2, 3, 4]: ")
+    search = input("Which would you like to search for? [1, 2, 3, 3.5, 4]: ")
 
     if search == "1":
         print("You have chosen to SHOW ALL WORDS:")
@@ -80,6 +88,40 @@ while ans == "y":
             print(f"{key:16} {word[key]}")
         print("-" * 200)
 
+    if search == "3.5":
+        print("You have chosen to show all words in alphabetical order")
+
+        for i in range(0, len(words) - 1):#outter loop
+
+            for index in range(0, len(words) - 1):#inner loop
+                #below if statement determines the sort
+                #list used is the list being sorted
+                # > is for increasing order, < for decreasing
+                if(words[index] > words[index + 1]):
+                    #if above is true, swap places!
+
+                    swap(index, words)
+
+        print(f"{'WORD':16} {'DEFINITION'}")
+        print("-" * 200)
+        for i in range(0, len(words)):
+            print(f"{words[i]:16} {word[words[i]]}")
+        print("-" * 200)
+
     if search == "4":
         print("Goodbye :)")
         ans = "n"
+
+file = open('Text_Files/updated_words.csv', 'w')
+
+count = 0
+
+for key in word:
+    count += 1
+
+    if count != (len(words)):
+        file.write(f"{key},{word[key]}\n")
+    else:
+        file.write(f"{key},{word[key]}")
+
+file.close()
