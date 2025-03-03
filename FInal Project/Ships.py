@@ -1,14 +1,15 @@
-Venator1 = {
+#Player Ship Options:
+Resolute = {
     "Admiral" : "Yularin",
     "General" : "Anakin Skywalker",
     "Commander" : "Ahsoka Tano",
     "Captain" : "Rex",
     "HP" : 20,
-    "atc" : 8,
-    "def" : 6
+    "atc" : 10,
+    "def" : 8
 }
 
-Venator2 = {
+Triumphant = {
     "Admiral" : "Coburn",
     "General" : "Plo Koon",
     "Commander" : "Wolffe",
@@ -17,20 +18,33 @@ Venator2 = {
     "def" : 4
 }
 
-Venator3 = {
+Endurance = {
     "Admiral" : "Kilian",
     "General" : "Mace Windu",
-    "Commander" : "Ponds"
+    "Commander" : "Ponds",
+    "HP" : 14,
+    "atc" : 4,
+    "def" : 2
 }
 
-Dreadnaught1 = {
-    "Admiral" : "Trench"
+#Enemy Ships:
+Invincible = {
+    "Admiral" : "Trench",
+    "HP" : 25,
+    "atc" : 12,
+    "def" : 12
 }
 
-Dreadnaught2 = {
+Omni = {
     "Admiral" : "Kilani",
+    "HP" : 20,
+    "atc" : 8,
+    "def" : 8
 }
 
-Dreadnaught3 = {
-    "Admiral" : "Mar Tuuk"
+Procurer = {
+    "Admiral" : "Mar Tuuk",
+    "HP" : 14,
+    "atc" : 6,
+    "def" : 2
 }
