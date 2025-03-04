@@ -27,6 +27,14 @@ Endurance = {
     "def" : 2
 }
 
+#Secret Ship for player: Password FOTR2
+BigBoiShip = {
+    "Admiral" : "Thrawn",
+    "HP" : 200,
+    "atc" : 100,
+    "def" : 50
+}
+
 #Enemy Ships:
 Invincible = {
     "Admiral" : "Trench",
@@ -47,4 +55,11 @@ Procurer = {
     "HP" : 14,
     "atc" : 6,
     "def" : 2
+}
+
+Malevolence = {
+    "General" : "Grevious",
+    "HP" : 100,
+    "atc" : 80,
+    "def" : 40
 }
