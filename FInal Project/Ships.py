@@ -5,7 +5,9 @@ Resolute = {
     "Captain" : "Rex",
     "HP" : 20,
     "atc" : 10,
-    "def" : 8
+    "def" : 8,
+    "Ability1" : "Repair",
+    "Ability2" : "Emp"
 }
 
 Triumphant = {
@@ -14,7 +16,8 @@ Triumphant = {
     "Commander" : "Wolffe",
     "HP" : 16,
     "atc" : 4,
-    "def" : 4
+    "def" : 4,
+    "Ability1" : "Repair"
 }
 
 Endurance = {
@@ -23,7 +26,9 @@ Endurance = {
     "Commander" : "Ponds",
     "HP" : 14,
     "atc" : 4,
-    "def" : 2
+    "def" : 2,
+    "Ability1" : "Emp"
+
 }
 
 #Secret Ship for player: Password FOTR2
@@ -71,6 +76,8 @@ print(f"        {Resolute['Captain']:20}  {Triumphant['Commander']:20} {Enduranc
 print(f"        HP: {str(Resolute['HP']):16}  HP: {str(Triumphant['HP']):16} HP: {str(Endurance['HP'])}")
 print(f"        atc: {str(Resolute['atc']):15}  atc: {str(Triumphant['atc']):15} atc: {str(Endurance['atc'])}")
 print(f"        def: {str(Resolute['def']):15}  def: {str(Triumphant['def']):15} def: {str(Endurance['def'])}")
+print(f"        {Resolute['Ability1']:20}  {Triumphant['Ability1']:20} {Endurance['Ability1']}")
+print(f"        {Resolute['Ability2']:20}")
 print("-" * 80)
 
 ans = "y"
