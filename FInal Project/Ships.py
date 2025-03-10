@@ -11,7 +11,7 @@ def enEmp():
 Resolute = {
     "Admiral" : "Yularin",
     "General" : "Anakin Skywalker",
-    "Captain" : "Rex",
+    "Commander" : "Rex",
     "HP" : 20,
     "atc" : 10,
     "def" : 8,
@@ -44,6 +44,8 @@ Endurance = {
 #Secret Ship for player: Password FOTR2
 Mandator = {
     "Admiral" : "Thrawn",
+    "General" : "Yoda",
+    "Commander" : "Gree",
     "HP" : 200,
     "atc" : 100,
     "def" : 50,
@@ -77,13 +79,11 @@ Procurer = {
 }
 
 Malevolence = {
-    "General" : "Grevious",
+    "Admiral" : "General Grevious",
     "HP" : 100,
     "atc" : 80,
     "def" : 40,
     "Ability" : [enAttack, enDefend, enRepair, enEmp]
-
-    
 }
 
 main_menu = "y"
@@ -103,7 +103,7 @@ while main_menu == "y":
         print("-" * 80)
         print(f"        {Resolute['Admiral']:20}  {Triumphant['Admiral']:20} {Endurance['Admiral']}")
         print(f"        {Resolute['General']:20}  {Triumphant['General']:20} {Endurance['General']}")
-        print(f"        {Resolute['Captain']:20}  {Triumphant['Commander']:20} {Endurance['Commander']}")
+        print(f"        {Resolute['Commander']:20}  {Triumphant['Commander']:20} {Endurance['Commander']}")
         print(f"        HP: {str(Resolute['HP']):16}  HP: {str(Triumphant['HP']):16} HP: {str(Endurance['HP'])}")
         print(f"        atc: {str(Resolute['atc']):15}  atc: {str(Triumphant['atc']):15} atc: {str(Endurance['atc'])}")
         print(f"        def: {str(Resolute['def']):15}  def: {str(Triumphant['def']):15} def: {str(Endurance['def'])}")
