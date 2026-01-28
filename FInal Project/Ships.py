@@ -13,8 +13,8 @@ Resolute = {
     "General" : "Anakin Skywalker",
     "Commander" : "Rex",
     "HP" : 20,
-    "atc" : 10,
-    "def" : 8,
+    "atc" : 14,
+    "def" : 4,
     "Ability1" : "Repair",
     "Ability2" : "Emp"
 }
@@ -23,8 +23,8 @@ Triumphant = {
     "Admiral" : "Coburn",
     "General" : "Plo Koon",
     "Commander" : "Wolffe",
-    "HP" : 16,
-    "atc" : 4,
+    "HP" : 18,
+    "atc" : 6,
     "def" : 4,
     "Ability1" : "Repair",
     "Ability2" : "None"
@@ -35,7 +35,7 @@ Endurance = {
     "General" : "Mace Windu",
     "Commander" : "Ponds",
     "HP" : 14,
-    "atc" : 4,
+    "atc" : 8,
     "def" : 2,
     "Ability1" : "None",
     "Ability2" : "Emp"
@@ -48,7 +48,7 @@ Mandator = {
     "Commander" : "Gree",
     "HP" : 200,
     "atc" : 100,
-    "def" : 50,
+    "def" : 25,
     "Ability1" : "Repair",
     "Ability2" : "Emp"
 }
@@ -58,7 +58,7 @@ Invincible = {
     "Admiral" : "Trench",
     "HP" : 25,
     "atc" : 12,
-    "def" : 12,
+    "def" : 6,
     "Ability" : [enAttack, enDefend, enEmp]
 }
 
@@ -66,7 +66,7 @@ Omni = {
     "Admiral" : "Kilani",
     "HP" : 20,
     "atc" : 8,
-    "def" : 8,
+    "def" : 4,
     "Ability" : [enAttack, enDefend, enRepair]
 }
 
@@ -82,7 +82,7 @@ Malevolence = {
     "Admiral" : "General Grevious",
     "HP" : 100,
     "atc" : 80,
-    "def" : 40,
+    "def" : 20,
     "Ability" : [enAttack, enDefend, enRepair, enEmp]
 }
 
